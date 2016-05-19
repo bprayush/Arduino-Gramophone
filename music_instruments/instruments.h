@@ -43,6 +43,8 @@ void Instruments::setOctave(int o) {
 
 void Instruments::play( int sensor ) {
 
+
+//3rd octave
   if ( octave == 1 )
   {
 
@@ -77,6 +79,8 @@ void Instruments::play( int sensor ) {
     }
   }
 
+
+//4th octave
   else if ( octave == 2 )
   {
     //C-scale
@@ -112,6 +116,8 @@ void Instruments::play( int sensor ) {
   }
 
 
+
+//5th octave
   else if ( octave == 3 )
   {
     //C-scale
