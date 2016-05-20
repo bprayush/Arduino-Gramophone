@@ -55,7 +55,10 @@ void Instruments::play( int sensor ) {
         NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_G3, NOTE_A3, NOTE_B3
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
+      
     }
 
     //D-scale
@@ -65,7 +68,9 @@ void Instruments::play( int sensor ) {
         NOTE_D3, NOTE_E3, NOTE_FS3, NOTE_G3, NOTE_A3, NOTE_B3, NOTE_CS3
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -75,7 +80,9 @@ void Instruments::play( int sensor ) {
         NOTE_G3, NOTE_A3, NOTE_B3, NOTE_C3, NOTE_D3, NOTE_E3, NOTE_FS3
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
   }
 
@@ -90,7 +97,9 @@ void Instruments::play( int sensor ) {
         NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
 
     //D-scale
@@ -100,7 +109,9 @@ void Instruments::play( int sensor ) {
         NOTE_D4, NOTE_E4, NOTE_FS4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_CS4
       };
 
-      tone(6, note[sensor], 500);
+     if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -110,7 +121,9 @@ void Instruments::play( int sensor ) {
         NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_FS4
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     
     } 
   }
@@ -127,7 +140,9 @@ void Instruments::play( int sensor ) {
         NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
 
     //D-scale
@@ -137,7 +152,9 @@ void Instruments::play( int sensor ) {
         NOTE_D5, NOTE_E5, NOTE_FS5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_CS5
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -147,7 +164,9 @@ void Instruments::play( int sensor ) {
         NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_FS5
       };
 
-      tone(6, note[sensor], 500);
+      if ( sensor % 2 == 0 )
+        tone( 9, note[sensor], 500);
+      else tone( 10, note[sensor], 500 );
     
     } 
   }
