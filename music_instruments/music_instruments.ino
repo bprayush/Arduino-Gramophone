@@ -42,7 +42,7 @@ void loop() {
 //Scale selector code
 void selectScale(){
 
-  if( scale == 0 || scale == 3)
+  if( scale == 3)
   {
     scale = 1;
     delay(200);

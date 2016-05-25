@@ -31,7 +31,7 @@
 #define NOTE_CS3 139
 #define NOTE_D3  147
 #define NOTE_DS3 156
-#define NOTE_E3  165
+#define NOTE_E3  166
 #define NOTE_F3  175
 #define NOTE_FS3 185
 #define NOTE_G3  196
@@ -56,7 +56,7 @@
 #define NOTE_D5  587
 #define NOTE_DS5 622
 #define NOTE_E5  659
-#define NOTE_F5  698
+#define NOTE_F5  699
 #define NOTE_FS5 740
 #define NOTE_G5  784
 #define NOTE_GS5 831
