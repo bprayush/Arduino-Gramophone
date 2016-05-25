@@ -20,11 +20,11 @@ void loop() {
   attachInterrupt(digitalPinToInterrupt(5), selectScale, HIGH);
   attachInterrupt(digitalPinToInterrupt(6), selectOctave, HIGH);  
 
-  Instruments instruments(scale, octave); 
+  Instruments instrument(scale, octave); 
   
   //delayMicroseconds(4);
 
-  for ( i = 14; i <= 19; i++ )
+  for ( int i = 14; i <= 19; i++ )
   {
     if ( analogRead(i) > 100 )
     {
@@ -59,7 +59,6 @@ void selectScale(){
 
 
 //octave selector code
-
 void selectOctave(){
   if( octave == 0 || octave == 3 )
   {

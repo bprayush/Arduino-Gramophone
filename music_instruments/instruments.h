@@ -57,7 +57,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
       
     }
 
@@ -70,7 +71,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -82,7 +84,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     }
   }
 
@@ -99,7 +102,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     }
 
     //D-scale
@@ -111,7 +115,8 @@ void Instruments::play( int sensor ) {
 
      if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else
+        tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -123,7 +128,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     
     } 
   }
@@ -142,7 +148,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     }
 
     //D-scale
@@ -154,7 +161,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     }
 
     //G-scale
@@ -166,7 +174,8 @@ void Instruments::play( int sensor ) {
 
       if ( sensor % 2 == 0 )
         tone( 9, note[sensor], 500);
-      else tone( 10, note[sensor], 500 );
+      else 
+        tone( 10, note[sensor], 500 );
     
     } 
   }
