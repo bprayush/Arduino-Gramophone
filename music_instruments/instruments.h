@@ -3,7 +3,7 @@
 /*
  * 
  * Constructor takes 2 parameters(scale and octave)
- * Pin 6 as speaker output
+ * Pin 9, 10 as speaker output
  * sensor = the input sensor number (start from 0 ends at 7)
  * octave 1-3
  * scale 1-3
