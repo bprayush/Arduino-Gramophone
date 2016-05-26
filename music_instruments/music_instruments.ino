@@ -3,6 +3,7 @@
 int sensor=0;
 int scale=1;
 int octave=1;
+int threshold;
 
 void setup() {
   // put your setup code here, to run once:
@@ -10,15 +11,24 @@ void setup() {
   for(int i=14; i<=19; i++)
     pinMode(i, INPUT);
 
-  pinMode(5, INPUT_PULLUP);
-  pinMode(6, INPUT_PULLUP);
+  for ( int i=14; i<=19; i++ )
+    threshold+=analogRead(i);
+
+  threshold = (threshold + 50) / 6;
+  Serial.println(threshold);
+  delay(1000);
+
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
   
 }
 
 void loop() {
 
-  attachInterrupt(digitalPinToInterrupt(5), selectScale, HIGH);
-  attachInterrupt(digitalPinToInterrupt(6), selectOctave, HIGH);  
+  if ( isKeyPressed(2) )
+    selectScale();
+  if ( isKeyPressed(3) )
+    selectOctave();
 
   Instruments instrument(scale, octave); 
   
@@ -26,12 +36,13 @@ void loop() {
 
   for ( int i = 14; i <= 19; i++ )
   {
-    if ( analogRead(i) > 100 )
+    //use 100;
+    if ( analogRead(i) > 100)
     {
-      Serial.print("In ");
-      Serial.print(i);
-      Serial.print(" :");
-      Serial.println(analogRead(i));
+      //Serial.print("In ");
+      //Serial.print(i);
+      //Serial.print(" :");
+      //Serial.println(analogRead(i));
       instrument.play(i-14);
     }
   }
@@ -41,39 +52,49 @@ void loop() {
 
 //Scale selector code
 void selectScale(){
-
+  Serial.print("Scale: ");
+  Serial.println(scale);
   if( scale == 3)
   {
     scale = 1;
-    delay(200);
   }else if( scale == 1)
   {
     scale = 2;
-    delay(200);
   }else if( scale == 2)
   {
     scale = 3;
-    delay(200);
   }
 }
 
 
 //octave selector code
 void selectOctave(){
-  if( octave == 0 || octave == 3 )
+  Serial.print("Scale: ");
+  Serial.println(scale);
+  if(  octave == 3 )
   {
     octave = 1;
-    delay(200);
   }else if( octave == 1)
   {
     octave = 2;
-    delay(200);
   }else if( octave == 2)  
   {
     octave = 3;
-    delay(200);
   }  
 }
 
+char isKeyPressed(char pinNumber)
+{
+   if(digitalRead(pinNumber)==HIGH)
+  {
+    delay(20);
+    while(digitalRead(pinNumber)==HIGH)
+      delay(20);
+    delay(80);
+    return 1;
+    //Serial.println("switch pressed");
+  }
+  return 0;
+}
 
 
