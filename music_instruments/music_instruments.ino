@@ -1,69 +1,82 @@
 #include "instruments.h"
 
-int sensor=0;
 int scale=1;
 int octave=1;
 int threshold=0;
-int average = 0;
+int a[6] = {0};
+int meanDeviation = 0;
 
+
+
+//Initial setup
 void setup() {
-  // put your setup code here, to run once:
+  
   Serial.begin(9600);
+
+  //Initializing input pins
   for(int i=14; i<=19; i++)
     pinMode(i, INPUT);
 
+  //getting the threshold value
   for ( int i=14; i<=19; i++ )
     threshold+=analogRead(i);
 
   threshold = threshold / 6;
+
+  //Serial print the threshold
+  Serial.print("Threshold= ");
   Serial.println(threshold);
   delay(1000);
 
+  //Initialize digital pins for switch input
   pinMode(2, INPUT);
   pinMode(3, INPUT);
   
 }
 
-int a[6] = {0};
-int meanDeviation = 0;
-
 void loop() {
 
+  //Check input from switches
   if ( isKeyPressed(2) )
     selectScale();
   if ( isKeyPressed(3) )
     selectOctave();
 
+  //Constructor and initializing the scales and octaves
   Instruments instrument(scale, octave); 
-  
-  //delayMicroseconds(4);
-  /*
-  for ( int i = 14; i <= 19; i++ )
-  {
-    //use 100;
-    if ( analogRead(i) > 150)
-    {
-      Serial.print("In ");
-      Serial.print(i);
-      Serial.print(" :");
-      Serial.println(analogRead(i));
-      instrument.play(i-14);
-    }
-  }
-  */
 
+  //Read and send the sensor number to instrument class
   for ( int i = 14; i <= 19; i++ )
   {
     a[i-14] = analogRead(i);
     meanDeviation = abs(a[i-14] - threshold);
-    if( meanDeviation > 100 )
+
+    if( threshold > 80 )
     {
-      Serial.print("In ");
-      Serial.print(i);
-      Serial.print(" :");
-      Serial.println(meanDeviation);
-      instrument.play(i-14);
+      //Code for day light or bright light
+      if( meanDeviation > 100 )
+      {
+        Serial.print("In ");
+        Serial.print(i);
+        Serial.print(" :");
+        Serial.println(meanDeviation);
+        instrument.play(i-14);
+      }
+
+    }else{
+      //Code for low lighting condition
+      if( meanDeviation > 30 )
+      {
+        Serial.print("In ");
+        Serial.print(i);
+        Serial.print(" :");
+        Serial.println(meanDeviation);
+        instrument.play(i-14);
+      }
+    
     }
+
+    
   }
   
   
@@ -103,6 +116,7 @@ void selectOctave(){
   }  
 }
 
+//Filter for input
 char isKeyPressed(char pinNumber)
 {
    if(digitalRead(pinNumber)==HIGH)
