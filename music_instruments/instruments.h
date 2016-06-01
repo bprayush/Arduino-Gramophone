@@ -56,40 +56,27 @@ void Instruments::play( int sensor ) {
         NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5
       };
 
-      if ( sensor % 2 == 0 ){
-        tone( 9, note[sensor], duration);
-        //Serial.println("this is even");
-      }
-      else {
-        tone( 10, note[sensor], duration );
-        Serial.println("this is odd");
-      }
+      tone( 9, note[sensor], duration);
     }
 
     //D-scale
     else if ( scale == 2 )
     {
       int note[] = {
-        NOTE_D5, NOTE_E5, NOTE_FS5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_CS5
+        NOTE_D5, NOTE_E5, NOTE_FS5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_CS6
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     }
 
     //G-scale
     else if ( scale == 3 )
     {
       int note[] = {
-        NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_FS5
+        NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C6, NOTE_D6, NOTE_E6, NOTE_FS6
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     }
   }
 
@@ -104,36 +91,27 @@ void Instruments::play( int sensor ) {
         NOTE_C6, NOTE_D6, NOTE_E6, NOTE_F6, NOTE_G6, NOTE_A6, NOTE_B6
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     }
 
     //D-scale
     else if ( scale == 2 )
     {
       int note[] = {
-        NOTE_D6, NOTE_E6, NOTE_FS6, NOTE_G6, NOTE_A6, NOTE_B6, NOTE_CS6
+        NOTE_D6, NOTE_E6, NOTE_FS6, NOTE_G6, NOTE_A6, NOTE_B6, NOTE_CS7
       };
 
-     if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else
-        tone( 10, note[sensor], duration );
+     tone( 9, note[sensor], duration);
     }
 
     //G-scale
     else if ( scale == 3 )
     {
       int note[] = {
-        NOTE_G6, NOTE_A6, NOTE_B6, NOTE_C6, NOTE_D6, NOTE_E6, NOTE_FS6
+        NOTE_G6, NOTE_A6, NOTE_B6, NOTE_C7, NOTE_D7, NOTE_E7, NOTE_FS7
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     
     } 
   }
@@ -150,36 +128,27 @@ void Instruments::play( int sensor ) {
         NOTE_C7, NOTE_D7, NOTE_E7, NOTE_F7, NOTE_G7, NOTE_A7, NOTE_B7
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     }
 
     //D-scale
     else if ( scale == 2 )
     {
       int note[] = {
-        NOTE_D7, NOTE_E7, NOTE_FS7, NOTE_G7, NOTE_A7, NOTE_B7, NOTE_CS7
+        NOTE_D7, NOTE_E7, NOTE_FS7, NOTE_G7, NOTE_A7, NOTE_B7, NOTE_CS8
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     }
 
     //G-scale
     else if ( scale == 3 )
     {
       int note[] = {
-        NOTE_G7, NOTE_A7, NOTE_B7, NOTE_C7, NOTE_D7, NOTE_E7, NOTE_FS7
+        NOTE_E7, NOTE_FS7, NOTE_G7, NOTE_A7, NOTE_B7, NOTE_C8, NOTE_D8 
       };
 
-      if ( sensor % 2 == 0 )
-        tone( 9, note[sensor], duration);
-      else 
-        tone( 10, note[sensor], duration );
+      tone( 9, note[sensor], duration);
     
     } 
   }

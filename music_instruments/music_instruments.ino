@@ -3,7 +3,8 @@
 int sensor=0;
 int scale=1;
 int octave=1;
-int threshold;
+int threshold=0;
+int average = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -14,14 +15,18 @@ void setup() {
   for ( int i=14; i<=19; i++ )
     threshold+=analogRead(i);
 
-  threshold = (threshold + 50) / 6;
+  threshold = threshold / 6;
   Serial.println(threshold);
   delay(1000);
 
   pinMode(2, INPUT);
   pinMode(3, INPUT);
+  pinMode(6, OUTPUT);
   
 }
+
+int a[6] = {0};
+int meanDeviation = 0;
 
 void loop() {
 
@@ -33,19 +38,35 @@ void loop() {
   Instruments instrument(scale, octave); 
   
   //delayMicroseconds(4);
-
+  /*
   for ( int i = 14; i <= 19; i++ )
   {
     //use 100;
-    if ( analogRead(i) > 100)
+    if ( analogRead(i) > 150)
     {
-      //Serial.print("In ");
-      //Serial.print(i);
-      //Serial.print(" :");
-      //Serial.println(analogRead(i));
+      Serial.print("In ");
+      Serial.print(i);
+      Serial.print(" :");
+      Serial.println(analogRead(i));
       instrument.play(i-14);
     }
   }
+  */
+
+  for ( int i = 14; i <= 19; i++ )
+  {
+    a[i-14] = analogRead(i);
+    meanDeviation = abs(a[i-14] - threshold);
+    if( meanDeviation > 100 )
+    {
+      Serial.print("In ");
+      Serial.print(i);
+      Serial.print(" :");
+      Serial.println(meanDeviation);
+      instrument.play(i-14);
+    }
+  }
+  
   
 }
 
@@ -69,8 +90,8 @@ void selectScale(){
 
 //octave selector code
 void selectOctave(){
-  Serial.print("Scale: ");
-  Serial.println(scale);
+  Serial.print("Octave: ");
+  Serial.println(octave);
   if(  octave == 3 )
   {
     octave = 1;
