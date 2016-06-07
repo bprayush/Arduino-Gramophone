@@ -16,6 +16,7 @@ class Instruments {
     int scale;
     int octave;
     int duration=200;
+    int outputPin = 10;
     void setScale(int s);
     void setOctave(int o);
 
@@ -55,7 +56,7 @@ void Instruments::play( int sensor ) {
         NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
 
     //D-scale
@@ -65,7 +66,7 @@ void Instruments::play( int sensor ) {
         NOTE_D5, NOTE_E5, NOTE_FS5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_CS6
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
 
     //G-scale
@@ -75,7 +76,7 @@ void Instruments::play( int sensor ) {
         NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C6, NOTE_D6, NOTE_E6, NOTE_FS6
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
   }
 
@@ -90,7 +91,7 @@ void Instruments::play( int sensor ) {
         NOTE_C6, NOTE_D6, NOTE_E6, NOTE_F6, NOTE_G6, NOTE_A6, NOTE_B6
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
 
     //D-scale
@@ -100,7 +101,7 @@ void Instruments::play( int sensor ) {
         NOTE_D6, NOTE_E6, NOTE_FS6, NOTE_G6, NOTE_A6, NOTE_B6, NOTE_CS7
       };
 
-     tone( 9, note[sensor], duration);
+     tone( outputPin, note[sensor], duration);
     }
 
     //G-scale
@@ -110,7 +111,7 @@ void Instruments::play( int sensor ) {
         NOTE_G6, NOTE_A6, NOTE_B6, NOTE_C7, NOTE_D7, NOTE_E7, NOTE_FS7
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     
     } 
   }
@@ -127,7 +128,7 @@ void Instruments::play( int sensor ) {
         NOTE_C7, NOTE_D7, NOTE_E7, NOTE_F7, NOTE_G7, NOTE_A7, NOTE_B7
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
 
     //D-scale
@@ -137,7 +138,7 @@ void Instruments::play( int sensor ) {
         NOTE_D7, NOTE_E7, NOTE_FS7, NOTE_G7, NOTE_A7, NOTE_B7, NOTE_CS8
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     }
 
     //G-scale
@@ -147,7 +148,7 @@ void Instruments::play( int sensor ) {
         NOTE_E7, NOTE_FS7, NOTE_G7, NOTE_A7, NOTE_B7, NOTE_C8, NOTE_D8 
       };
 
-      tone( 9, note[sensor], duration);
+      tone( outputPin, note[sensor], duration);
     
     } 
   }
